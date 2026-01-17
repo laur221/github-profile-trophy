@@ -52,6 +52,38 @@ These are endpoints provided by volunteers. Please use these in moderation.
 - [https://github-profile-trophy-winning.vercel.app](https://github-profile-trophy-winning.vercel.app)
   by [hongbo-wei](https://github.com/hongbo-wei)
 
+# Deploy pe Vercel (instalare rapidă)
+
+Dacă ai făcut fork la acest repo (sau l-ai clonat) poți să-l rulezi gratuit pe Vercel. Pașii rapizi:
+
+1. Asigură-te că repoul tău fork este pe GitHub (de ex. `github.com/USERNAME/github-profile-trophy`).
+2. Intră pe https://vercel.com și autentifică-te cu contul GitHub.
+3. Click pe **New Project** → **Import Git Repository** și selectează repo-ul tău fork.
+4. La setările proiectului:
+  - Root: lasă implicit (rădăcina repo-ului) sau specifică folderul dacă ai mutat fișierele.
+  - Framework Preset: poți lăsa pe `Other` (Vercel detectează configurația Deno automat)
+  - Build Command: — (nu e nevoie pentru acest proiect Deno)
+  - Output Directory: —
+5. Vercel va folosi `vercel.json` (acest repo are deja `vercel-deno` configurat pentru funcții în `api/`). Nu sunt necesare variabile de mediu pentru funcționalitatea de bază.
+6. Click **Deploy**. După deploy, vei avea un URL de forma `https://<nume-proiect>.vercel.app`.
+
+Folosire în README-ul tău GitHub:
+
+```
+[![trophy](https://<nume-proiect>.vercel.app/?username=TU_USERNAME)](https://github.com/ryo-ma/github-profile-trophy)
+```
+
+Sfat CLI (opțional): dacă vrei să deploy-ezi din terminal, instalează `vercel` și rulează:
+
+```bash
+npm i -g vercel
+vercel login
+cd path/to/your/repo
+vercel --prod
+```
+
+Dacă vrei, pot adăuga și un fișier `DEPLOY_VERSEL.md` cu imagini și capturi pas-cu-pas.
+
 # Quick Start
 
 Add the following code to your readme. When pasting the code into your profile's
