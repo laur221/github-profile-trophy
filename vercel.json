@@ -1,14 +1,15 @@
 {
-  "builds": [
-    {
-      "src": "main.go",
-      "use": "@vercel/go"
+  "public": true,
+  "functions": {
+    "api/**/*.[jt]s": {
+      "runtime": "vercel-deno@3.1.1",
+      "maxDuration": 5
     }
-  ],
-  "routes": [
+  },
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "main.go"
+      "source": "/(.*)",
+      "destination": "/api/$1"
     }
   ]
 }
